@@ -1,7 +1,6 @@
 import { useReducer } from "react";
 
 function reducer(state, action) {
-  console.log(state);
   switch (action.type) {
     case "dec":
       return { ...state, count: state.count - state.step };

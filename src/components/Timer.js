@@ -5,7 +5,6 @@ function Timer() {
   const { dispatch, secondRemaining } = useQuiz();
   const mins = Math.floor(secondRemaining / 60);
   const seconds = secondRemaining % 60;
-  console.log(mins, seconds);
   useEffect(
     function () {
       const id = setInterval(() => {
