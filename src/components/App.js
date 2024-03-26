@@ -21,6 +21,8 @@ export default function App() {
     highscore,
     secondRemaining,
     dispatch,
+    numQuestions,
+    maxPossiblePoints,
   } = useQuiz();
 
   return (
@@ -29,18 +31,10 @@ export default function App() {
       <Main>
         {status === "loading" && <Loader />}
         {status === "error" && <Error />}
-        {status === "ready" && (
-          <StartScreen numQuestions={numQuestions} dispatch={dispatch} />
-        )}
+        {status === "ready" && <StartScreen />}
         {status === "active" && (
           <>
-            <Progress
-              index={index}
-              numQuestions={numQuestions}
-              points={points}
-              maxPossiblePoints={maxPossiblePoints}
-              answer={answer}
-            />
+            <Progress />
             <Questions
               question={questions[index]}
               dispatch={dispatch}
