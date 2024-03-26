@@ -12,18 +12,7 @@ import Timer from "./Timer";
 import { useQuiz } from "../context/QuizContext";
 
 export default function App() {
-  const {
-    questions,
-    status,
-    index,
-    answer,
-    points,
-    highscore,
-    secondRemaining,
-    dispatch,
-    numQuestions,
-    maxPossiblePoints,
-  } = useQuiz();
+  const { status } = useQuiz();
 
   return (
     <div className="app">
@@ -38,25 +27,11 @@ export default function App() {
             <Questions />
             <Footer>
               <Timer />
-              <NextButton
-                dispatch={dispatch}
-                answer={answer}
-                index={index}
-                numQuestions={numQuestions}
-              />
+              <NextButton />
             </Footer>
           </>
         )}
-        {status === "finished" && (
-          <FinishedScreen
-            points={points}
-            maxPossiblePoints={maxPossiblePoints}
-            index={index}
-            numQuestions={numQuestions}
-            highscore={highscore}
-            dispatch={dispatch}
-          />
-        )}
+        {status === "finished" && <FinishedScreen />}
       </Main>
     </div>
   );
