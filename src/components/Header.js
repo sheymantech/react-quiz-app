@@ -1,4 +1,4 @@
-import { QuizProvider } from "../context/QuizContext";
+import { QuizProvider, useQuiz } from "../context/QuizContext";
 
 function Header() {
   return (
